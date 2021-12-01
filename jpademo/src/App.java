@@ -183,7 +183,7 @@ public class App {
 
     }
     public static void main(String[] args) throws Exception {
-        // basicDemos();
-        associationDemos();
+        basicDemos();
+        //associationDemos();
     }
 }
