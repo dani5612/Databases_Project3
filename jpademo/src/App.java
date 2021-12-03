@@ -101,10 +101,10 @@ public class App {
         System.out.println("Example #4: Using JPQL to select all museums");
         // This is simple. Just omit the WHERE, and use .getResultList().
         var museums = em.createQuery("select m from MUSEUMS m", Museum.class).getResultList();
-
-        for (Museum m : museums) {
-            System.out.println(m);
-        }
+// Uncomment
+        // for (Museum m : museums) {
+        //     System.out.println(m);
+        // }
     }
 
     // These demos show how to navigate associations.
@@ -155,9 +155,10 @@ public class App {
             "WHERE b.museum.museumId = 1", Building.class).getResultList();
 
         System.out.println("MOLAA's Buildings, using a query:");
-        for (Building b : buildings) {
-            System.out.println(b);
-        }
+        // Uncomment
+        // for (Building b : buildings) {
+        //     System.out.println(b);
+        // }
 
         System.out.println();
         System.out.println("Example #7: Navigating a many-to-many association");
@@ -182,7 +183,8 @@ public class App {
         }
 
     }
-    public static void main(String[] args) throws Exception {
+
+    public static void main(String[] args) {
         basicDemos();
         //associationDemos();
     }
