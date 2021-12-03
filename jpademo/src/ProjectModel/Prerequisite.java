@@ -15,9 +15,8 @@ public class Prerequisite{
     @ManyToOne
     @JoinColumn(name = "COURSE_ID")
     private Course parentCourse; 
-
-    @ManyToOne
-    @JoinColumn(name = "COURSE_ID")
+    //Tried specifiying another Many to one with join column here, and Eclipse Persistance HATED that.
+    //Leaving it blank for now
     private Course prereqCourse;
 
 
@@ -65,10 +64,9 @@ public class Prerequisite{
     
     @Override
     public String toString() {
-        return "To enroll in " +
-            getParentCourse() + ", a grade of " +
-            getMinimumGrade() + " or higher is required in the following course:" +
-            getPrereqCourse();
+        return getPrereqCourse() + " with a grade of " +
+            getMinimumGrade() + " or higher to enroll in " +
+            getParentCourse();
     }
 
 }

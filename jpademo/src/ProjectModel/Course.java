@@ -76,11 +76,9 @@ public class Course {
 
     @Override
     public String toString() {
-        return "Course " +
-            getNumber() + ", '" +
+        return getDepartment().getAbbreviation() + getNumber() + ", '" +
             getTitle() + "'. " +
-            getUnits() + " units. " +
-            ", Dept: '" + getDepartment();
+            getUnits() + " units. ";
     }
 
 }

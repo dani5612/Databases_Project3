@@ -11,7 +11,7 @@
             <property name="jakarta.persistence.jdbc.url" value="jdbc:derby:/Users/giovanniquevedo/Desktop/Derby" />
             <property name="jakarta.persistence.jdbc.user" value="username" />
             <property name="jakarta.persistence.jdbc.password" value="password" />
-            <property name="jakarta.persistence.schema-generation.database.action" value="create" />
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create" />
         </properties>
     </persistence-unit>
 </persistence>

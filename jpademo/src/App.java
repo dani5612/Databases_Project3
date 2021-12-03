@@ -26,6 +26,8 @@ public class App {
             System.out.println("There is no museum with ID 4");
         }
 
+        System.exit(0);
+
         // The next "if" block will protect me if I run this code multiple times.
         // Otherwise we'll keep trying to create an object with a non-unique primary key,
         // and crash the program.
