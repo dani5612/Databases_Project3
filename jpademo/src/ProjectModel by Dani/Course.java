@@ -2,6 +2,7 @@ package ProjectModel;
 
 import jakarta.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity(name = "COURSES")
 public class Course {
@@ -15,6 +16,7 @@ public class Course {
 
     //ID of the course
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "COURSE_ID")
     private int courseID;
 
@@ -26,8 +28,9 @@ public class Course {
     private Department department;
 
     //Relation to prerequisite
-    @OneToMany(mappedBy = "parentCourse")
-    private List<Prerequisite> preReqs;
+    @OneToMany(mappedBy = "followupCourse")
+    private Set<Prerequisite> prerequisites;
+
 
     //Default Constructor
     public Course() {

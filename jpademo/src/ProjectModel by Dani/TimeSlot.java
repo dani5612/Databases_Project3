@@ -15,6 +15,7 @@ public class TimeSlot {
 
     //Primary Key
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TIMESLOT_ID")
     private int timeslotID;
 

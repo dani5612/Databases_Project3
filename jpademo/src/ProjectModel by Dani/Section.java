@@ -1,5 +1,7 @@
 package ProjectModel;
 
+import java.util.Set;
+
 import jakarta.persistence.*;
 
 @Entity(name = "SECTIONS")
@@ -11,6 +13,7 @@ public class Section {
 
     //Primary Key
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "SECTION_ID")
     private int sectionID;
 
@@ -31,6 +34,12 @@ public class Section {
 
     
     //Many to many for students
+    @ManyToMany
+    @JoinTable(name = "STUDENTSECTIONS", 
+        joinColumns = @JoinColumn(name = "SECTION_ID"), 
+        inverseJoinColumns = @JoinColumn(name = "STUDENT_ID")
+    )
+    private Set<Student> students;
 
     //Many to Many for Transcript (history?)
 

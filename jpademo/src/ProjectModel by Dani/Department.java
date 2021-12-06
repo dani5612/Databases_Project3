@@ -14,6 +14,7 @@ public class Department {
 
     // PK
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "DEPARTMENT_ID")
     private int deptID;
 

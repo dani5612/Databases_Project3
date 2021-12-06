@@ -13,6 +13,7 @@ public class Semester {
 
     //ObjectID
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "SEMESTER_ID")
     private int semesterId;
 
