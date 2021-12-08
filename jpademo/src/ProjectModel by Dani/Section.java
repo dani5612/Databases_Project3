@@ -7,8 +7,15 @@ import jakarta.persistence.*;
 @Entity(name = "SECTIONS")
 public class Section {
     //Required Attributes
-    private int sectionNumber;
-    private int maxCapacity;
+    //Section Number uses a byte. It is 
+    //Unlikely there will be more than 127
+    //sections of the class
+    private byte sectionNumber;
+    //A section may have more than 127 students.
+    //There have been classes with 200+ students,
+    //A short will be enough since it covers up to
+    //32,767 students which is unlikely to happen.
+    private short maxCapacity;
 
 
     //Primary Key
@@ -43,19 +50,19 @@ public class Section {
 
     //Many to Many for Transcript (history?)
 
-    public int getSectionNumber() {
+    public byte getSectionNumber() {
         return sectionNumber;
     }
 
-    public void setSectionNumber(int sectionNumber) {
+    public void setSectionNumber(byte sectionNumber) {
         this.sectionNumber = sectionNumber;
     }
 
-    public int getMaxCapacity() {
+    public short getMaxCapacity() {
         return maxCapacity;
     }
 
-    public void setMaxCapacity(int maxCapacity) {
+    public void setMaxCapacity(short maxCapacity) {
         this.maxCapacity = maxCapacity;
     }
 

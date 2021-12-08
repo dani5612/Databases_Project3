@@ -12,7 +12,11 @@ public class Course {
     private String number;
     @Column(length = 64)
     private String title;
-    private int units;
+
+    //Using byte since units can be 
+    //4 at most. byte is the smallest
+    //data type.
+    private byte units;
 
     //ID of the course
     @Id
@@ -36,7 +40,7 @@ public class Course {
     public Course() {
     }
     //Overloaded constructor
-    public Course(String number, String title, int units, int courseID, Department department) {
+    public Course(String number, String title, byte units, int courseID, Department department) {
         this.number = number;
         this.title = title;
         this.units = units;
@@ -60,11 +64,11 @@ public class Course {
         this.title = title;
     }
 
-    public int getUnits() {
+    public byte getUnits() {
         return this.units;
     }
 
-    public void setUnits(int units) {
+    public void setUnits(byte units) {
         this.units = units;
     }
 
